@@ -44,7 +44,7 @@ const channels = [
       </svg>
     ),
     label: "Office Hours",
-    value: "Mon – Fri, 9:00 AM – 6:00 PM PHT",
+    value: "Mon – Fri, 9:00 AM – 5:00 PM PHT",
     href: null,
   },
   {

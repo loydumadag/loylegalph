@@ -103,7 +103,10 @@ export default function About() {
                   {"details" in c && c.details && (
                     <ul className="mt-1 flex flex-col gap-0.5">
                       {c.details.map((d) => (
-                        <li key={d} className="text-[#4A6070] dark:text-[#8BA4B8]">— {d}</li>
+                        <li key={d} className="flex gap-2 text-[#4A6070] dark:text-[#8BA4B8]">
+                          <span className="flex-shrink-0">—</span>
+                          <span>{d}</span>
+                        </li>
                       ))}
                     </ul>
                   )}

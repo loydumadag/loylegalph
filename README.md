@@ -142,4 +142,4 @@ Attorney-at-Law & Notary Public
 - Email: info@loylegal.ph
 - Phone / Viber: +63 917 701 2235
 - Office: Unit 1, Inocencia Row, Guinoyuran Road, P4A-Poblacion, Valencia City, Bukidnon 8709, Philippines
-- Hours: Monday – Friday, 9:00 AM – 6:00 PM PHT
+- Hours: Monday – Friday, 9:00 AM – 5:00 PM PHT
