@@ -63,7 +63,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" style={{ background: "#0F2440" }} className="py-28">
+    <section id="why-us" style={{ background: "var(--c-dark-section)" }} className="py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
 
         {/* Header */}

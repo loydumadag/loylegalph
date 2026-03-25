@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-navy:       #1E3A5F;
   --color-navy-deep:  #0A1520;
@@ -20,13 +22,48 @@
   --font-sans:  var(--font-lato);
 }
 
+/* ─── Theme tokens ────────────────────────────── */
+:root {
+  --c-bg:           #F6F7F9;
+  --c-bg2:          #ECEEF2;
+  --c-surface:      #FFFFFF;
+  --c-text:         #0A1520;
+  --c-mid:          #253545;
+  --c-muted:        #4A6070;
+  --c-lighter:      #7A96A8;
+  --c-border:       #E2E8F0;
+  --c-dark-section: #0F2440;
+  --c-footer:       #0A1520;
+}
+
+.dark {
+  --c-bg:           #0D1B2A;
+  --c-bg2:          #111D2E;
+  --c-surface:      #162032;
+  --c-text:         #E2EBF3;
+  --c-mid:          #B8C9D8;
+  --c-muted:        #8BA4B8;
+  --c-lighter:      #5A7A90;
+  --c-border:       rgba(255, 255, 255, 0.10);
+  --c-dark-section: #07111C;
+  --c-footer:       #050D18;
+}
+
+/* ─── Hero background ─────────────────────────── */
+.hero-section {
+  background: linear-gradient(150deg, #F6F7F9 45%, #EDF0F7 100%);
+}
+.dark .hero-section {
+  background: linear-gradient(150deg, #0D1B2A 45%, #111D2E 100%);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #F6F7F9;
-  color: #253545;
+  background-color: var(--c-bg);
+  color: var(--c-mid);
   font-family: var(--font-jost), sans-serif;
   overflow-x: hidden;
 }

@@ -8,8 +8,12 @@ const credentials = [
     detail: "Integrated Bar of the Philippines · since 1996",
   },
   {
-    title: "Program of Instructions for Lawyers",
-    detail: "Harvard Law School",
+    title: "Certifications and Training",
+    details: [
+      "Equal Employment Opportunity Commission (EEOC) (2012)",
+      "Harvard Law School (2005)",
+      "Asian Institute of Management (1999)",
+    ],
   },
 ];
 
@@ -18,20 +22,20 @@ export default function About() {
     <section
       id="about"
       className="py-28"
-      style={{ background: "#ECEEF2" }}
+      style={{ background: "var(--c-bg2)" }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
         {/* Left: photo block */}
         <div className="relative">
           {/* Decorative corner frame */}
-          <div className="absolute -top-4 -right-4 w-20 h-20 border border-[rgba(30,58,95,0.18)] pointer-events-none" />
+          <div className="absolute -top-4 -right-4 w-20 h-20 border border-[rgba(30,58,95,0.18)] dark:border-white/10 pointer-events-none" />
 
           {/* Attorney photo */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/attorney-profile.jpg"
             alt="Atty. Marilou &quot;Loy&quot; S. Dumadag"
-            className="w-full aspect-[3/4] max-h-[540px] object-cover object-top border border-[#E2E8F0]"
+            className="w-full aspect-[3/4] max-h-[540px] object-cover object-top border border-[#E2E8F0] dark:border-white/10"
             style={{ filter: "grayscale(8%)" }}
           />
 
@@ -43,20 +47,20 @@ export default function About() {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <span className="block w-8 h-[1.5px] bg-[#1E3A5F]" />
-            <p className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#1E3A5F]">
+            <p className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#1E3A5F] dark:text-[#6A9CC8]">
               About the Attorney
             </p>
           </div>
 
           <h2
-            className="font-serif font-light leading-[1.14] text-[#0A1520] mb-6"
+            className="font-serif font-light leading-[1.14] text-[#0A1520] dark:text-[#E2EBF3] mb-6"
             style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
           >
             Nearly Three Decades of{" "}
-            <em className="italic text-[#1E3A5F]">Legal Excellence</em>
+            <em className="italic text-[#1E3A5F] dark:text-[#6A9CC8]">Legal Excellence</em>
           </h2>
 
-          <div className="space-y-5 text-[0.94rem] font-light leading-[1.85] text-[#253545] mb-8">
+          <div className="space-y-5 text-[0.94rem] font-light leading-[1.85] text-[#253545] dark:text-[#B8C9D8] mb-8">
             <p>
               Atty. Marilou &ldquo;Loy&rdquo; S. Dumadag is a seasoned legal
               professional with close to three decades of experience spanning
@@ -87,14 +91,23 @@ export default function About() {
           </div>
 
           {/* Credentials */}
-          <div className="border-t border-[#E2E8F0] pt-6 flex flex-col gap-4">
+          <div className="border-t border-[#E2E8F0] dark:border-white/10 pt-6 flex flex-col gap-4">
             {credentials.map((c) => (
               <div key={c.title} className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#1E3A5F] flex-shrink-0" />
-                <p className="text-[0.85rem] text-[#253545] leading-[1.5] font-normal">
-                  <strong className="font-semibold text-[#0A1520]">{c.title}</strong>
-                  <span className="text-[#4A6070]"> — {c.detail}</span>
-                </p>
+                <div className="text-[0.85rem] text-[#253545] dark:text-[#B8C9D8] leading-[1.5] font-normal">
+                  <strong className="font-semibold text-[#0A1520] dark:text-[#E2EBF3]">{c.title}</strong>
+                  {"detail" in c && (
+                    <span className="text-[#4A6070] dark:text-[#8BA4B8]"> — {c.detail}</span>
+                  )}
+                  {"details" in c && c.details && (
+                    <ul className="mt-1 flex flex-col gap-0.5">
+                      {c.details.map((d) => (
+                        <li key={d} className="text-[#4A6070] dark:text-[#8BA4B8]">— {d}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
             ))}
           </div>

@@ -106,25 +106,25 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-28" style={{ background: "#ECEEF2" }}>
+    <section id="contact" className="py-28" style={{ background: "var(--c-bg2)" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
 
         {/* Left: info */}
         <div>
           <div className="flex items-center gap-3 mb-4">
             <span className="block w-8 h-[1.5px] bg-[#1E3A5F]" />
-            <p className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#1E3A5F]">
+            <p className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#1E3A5F] dark:text-[#6A9CC8]">
               Get in Touch
             </p>
           </div>
           <h2
-            className="font-serif font-light leading-[1.14] text-[#0A1520] mb-4"
+            className="font-serif font-light leading-[1.14] text-[#0A1520] dark:text-[#E2EBF3] mb-4"
             style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
           >
             Start a{" "}
-            <em className="italic text-[#1E3A5F]">Conversation</em>
+            <em className="italic text-[#1E3A5F] dark:text-[#6A9CC8]">Conversation</em>
           </h2>
-          <p className="text-[0.97rem] font-light leading-[1.8] text-[#4A6070] mb-10 max-w-[440px]">
+          <p className="text-[0.97rem] font-light leading-[1.8] text-[#4A6070] dark:text-[#8BA4B8] mb-10 max-w-[440px]">
             Ready to discuss your legal needs? Reach out to schedule a
             consultation — remote or in-person. We typically respond within
             24 hours.
@@ -135,10 +135,10 @@ export default function Contact() {
               <div
                 key={ch.label}
                 className={`flex items-start gap-4 py-5 ${
-                  i < channels.length - 1 ? "border-b border-[#E2E8F0]" : ""
+                  i < channels.length - 1 ? "border-b border-[#E2E8F0] dark:border-white/10" : ""
                 }`}
               >
-                <div className="w-9 h-9 border border-[rgba(30,58,95,0.18)] bg-white flex items-center justify-center flex-shrink-0 text-[#1E3A5F]">
+                <div className="w-9 h-9 border border-[rgba(30,58,95,0.18)] dark:border-white/10 bg-white dark:bg-white/5 flex items-center justify-center flex-shrink-0 text-[#1E3A5F] dark:text-[#6A9CC8]">
                   {ch.icon}
                 </div>
                 <div>
@@ -148,12 +148,12 @@ export default function Contact() {
                   {ch.href ? (
                     <a
                       href={ch.href}
-                      className="text-[0.9rem] font-medium text-[#0A1520] hover:text-[#1E3A5F] transition-colors"
+                      className="text-[0.9rem] font-medium text-[#0A1520] dark:text-[#E2EBF3] hover:text-[#1E3A5F] dark:hover:text-[#6A9CC8] transition-colors"
                     >
                       {ch.value}
                     </a>
                   ) : (
-                    <p className="text-[0.9rem] font-medium text-[#0A1520] whitespace-pre-line leading-[1.6]">
+                    <p className="text-[0.9rem] font-medium text-[#0A1520] dark:text-[#E2EBF3] whitespace-pre-line leading-[1.6]">
                       {ch.value}
                     </p>
                   )}
@@ -166,16 +166,16 @@ export default function Contact() {
         {/* Right: form */}
         <div>
           {submitted ? (
-            <div className="flex flex-col items-center justify-center text-center py-20 px-8 bg-white border border-[#E2E8F0]">
+            <div className="flex flex-col items-center justify-center text-center py-20 px-8 bg-white dark:bg-[#162032] border border-[#E2E8F0] dark:border-white/10">
               <div className="w-14 h-14 bg-[#1E3A5F] flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="font-serif text-[1.6rem] font-light text-[#0A1520] mb-3">
+              <h3 className="font-serif text-[1.6rem] font-light text-[#0A1520] dark:text-[#E2EBF3] mb-3">
                 Inquiry Sent
               </h3>
-              <p className="text-[0.87rem] font-light text-[#4A6070] max-w-xs leading-relaxed">
+              <p className="text-[0.87rem] font-light text-[#4A6070] dark:text-[#8BA4B8] max-w-xs leading-relaxed">
                 Thank you for reaching out. We will review your inquiry and get
                 back to you within 24 hours.
               </p>
@@ -184,14 +184,14 @@ export default function Contact() {
                   setSubmitted(false);
                   setForm({ firstName: "", lastName: "", email: "", area: "", description: "" });
                 }}
-                className="mt-8 text-[0.78rem] font-semibold tracking-[0.1em] uppercase text-[#1E3A5F] hover:underline"
+                className="mt-8 text-[0.78rem] font-semibold tracking-[0.1em] uppercase text-[#1E3A5F] dark:text-[#6A9CC8] hover:underline"
               >
                 Submit another inquiry
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-white border border-[#E2E8F0] p-8 flex flex-col gap-5">
-              <p className="text-[0.68rem] font-semibold tracking-[0.16em] uppercase text-[#1E3A5F] mb-1">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-[#162032] border border-[#E2E8F0] dark:border-white/10 p-8 flex flex-col gap-5">
+              <p className="text-[0.68rem] font-semibold tracking-[0.16em] uppercase text-[#1E3A5F] dark:text-[#6A9CC8] mb-1">
                 Consultation Request
               </p>
 
@@ -202,7 +202,7 @@ export default function Contact() {
                   { name: "lastName",  label: "Last Name",  placeholder: "dela Cruz" },
                 ].map((f) => (
                   <div key={f.name}>
-                    <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] mb-2">
+                    <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] dark:text-[#8BA4B8] mb-2">
                       {f.label}
                     </label>
                     <input
@@ -212,7 +212,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder={f.placeholder}
                       required
-                      className="w-full border border-[#E2E8F0] px-4 py-3 text-[0.9rem] text-[#0A1520] font-light placeholder-[#7A96A8] focus:outline-none focus:border-[#1E3A5F] transition-colors bg-white"
+                      className="w-full border border-[#E2E8F0] dark:border-white/10 px-4 py-3 text-[0.9rem] text-[#0A1520] dark:text-[#E2EBF3] font-light placeholder-[#7A96A8] focus:outline-none focus:border-[#1E3A5F] transition-colors bg-white dark:bg-white/5"
                     />
                   </div>
                 ))}
@@ -220,7 +220,7 @@ export default function Contact() {
 
               {/* Email */}
               <div>
-                <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] mb-2">
+                <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] dark:text-[#8BA4B8] mb-2">
                   Email Address
                 </label>
                 <input
@@ -230,13 +230,13 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="juan@example.com"
                   required
-                  className="w-full border border-[#E2E8F0] px-4 py-3 text-[0.9rem] text-[#0A1520] font-light placeholder-[#7A96A8] focus:outline-none focus:border-[#1E3A5F] transition-colors bg-white"
+                  className="w-full border border-[#E2E8F0] dark:border-white/10 px-4 py-3 text-[0.9rem] text-[#0A1520] dark:text-[#E2EBF3] font-light placeholder-[#7A96A8] focus:outline-none focus:border-[#1E3A5F] transition-colors bg-white dark:bg-white/5"
                 />
               </div>
 
               {/* Practice area — custom dropdown */}
               <div ref={dropdownRef}>
-                <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] mb-2">
+                <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] dark:text-[#8BA4B8] mb-2">
                   Practice Area
                 </label>
                 <div className="relative">
@@ -244,13 +244,13 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={() => setDropdownOpen((o) => !o)}
-                    className={`w-full flex items-center justify-between px-4 py-3 border bg-white text-[0.9rem] text-left transition-colors duration-200 ${
+                    className={`w-full flex items-center justify-between px-4 py-3 border bg-white dark:bg-white/5 text-[0.9rem] text-left transition-colors duration-200 ${
                       dropdownOpen
                         ? "border-[#1E3A5F]"
-                        : "border-[#E2E8F0] hover:border-[#7A96A8]"
+                        : "border-[#E2E8F0] dark:border-white/10 hover:border-[#7A96A8]"
                     }`}
                   >
-                    <span className={form.area ? "text-[#0A1520]" : "text-[#7A96A8] font-light"}>
+                    <span className={form.area ? "text-[#0A1520] dark:text-[#E2EBF3]" : "text-[#7A96A8] font-light"}>
                       {form.area || "Select a practice area"}
                     </span>
                     <svg
@@ -258,7 +258,7 @@ export default function Contact() {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={1.8}
-                      className={`w-4 h-4 text-[#4A6070] flex-shrink-0 transition-transform duration-200 ${
+                      className={`w-4 h-4 text-[#4A6070] dark:text-[#8BA4B8] flex-shrink-0 transition-transform duration-200 ${
                         dropdownOpen ? "rotate-180" : ""
                       }`}
                     >
@@ -268,7 +268,7 @@ export default function Contact() {
 
                   {/* Dropdown list */}
                   {dropdownOpen && (
-                    <div className="absolute z-20 top-full left-0 right-0 bg-white border border-[#1E3A5F] border-t-0 shadow-lg max-h-64 overflow-y-auto">
+                    <div className="absolute z-20 top-full left-0 right-0 bg-white dark:bg-[#162032] border border-[#1E3A5F] border-t-0 shadow-lg max-h-64 overflow-y-auto">
                       {practiceAreas.map((a, i) => (
                         <button
                           key={a}
@@ -280,8 +280,8 @@ export default function Contact() {
                           className={`w-full text-left px-4 py-3 text-[0.88rem] transition-colors duration-150 flex items-center gap-3 ${
                             form.area === a
                               ? "bg-[#1E3A5F] text-white font-medium"
-                              : "text-[#253545] hover:bg-[#F6F7F9]"
-                          } ${i < practiceAreas.length - 1 ? "border-b border-[#E2E8F0]" : ""}`}
+                              : "text-[#253545] dark:text-[#B8C9D8] hover:bg-[#F6F7F9] dark:hover:bg-white/5"
+                          } ${i < practiceAreas.length - 1 ? "border-b border-[#E2E8F0] dark:border-white/10" : ""}`}
                         >
                           {form.area === a && (
                             <svg viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3 flex-shrink-0">
@@ -300,7 +300,7 @@ export default function Contact() {
 
               {/* Description */}
               <div>
-                <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] mb-2">
+                <label className="block text-[0.66rem] font-semibold tracking-[0.12em] uppercase text-[#4A6070] dark:text-[#8BA4B8] mb-2">
                   Brief Description of Your Matter
                 </label>
                 <textarea
@@ -310,7 +310,7 @@ export default function Contact() {
                   rows={5}
                   placeholder="Please briefly describe your legal concern..."
                   required
-                  className="w-full border border-[#E2E8F0] px-4 py-3 text-[0.9rem] text-[#0A1520] font-light placeholder-[#7A96A8] focus:outline-none focus:border-[#1E3A5F] transition-colors resize-y bg-white"
+                  className="w-full border border-[#E2E8F0] dark:border-white/10 px-4 py-3 text-[0.9rem] text-[#0A1520] dark:text-[#E2EBF3] font-light placeholder-[#7A96A8] focus:outline-none focus:border-[#1E3A5F] transition-colors resize-y bg-white dark:bg-white/5"
                 />
               </div>
 
@@ -325,11 +325,6 @@ export default function Contact() {
               >
                 {loading ? "Sending…" : "Send Inquiry"}
               </button>
-
-              {/* <p className="text-[0.72rem] text-[#7A96A8] text-center leading-relaxed">
-                Submitting this form does not create an attorney-client
-                relationship. We will contact you to discuss your matter further.
-              </p> */}
             </form>
           )}
         </div>

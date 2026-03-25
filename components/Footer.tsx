@@ -7,7 +7,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#0A1520" }}>
+    <footer style={{ background: "var(--c-footer)" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-12">
         {/* Top row */}
         <div className="flex flex-wrap items-start justify-between gap-8 mb-8">

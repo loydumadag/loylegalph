@@ -93,26 +93,26 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white py-28">
+    <section id="services" className="bg-white dark:bg-[#0D1B2A] py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-10 items-end mb-14">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="block w-8 h-[1.5px] bg-[#1E3A5F]" />
-              <p className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#1E3A5F]">
+              <p className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#1E3A5F] dark:text-[#6A9CC8]">
                 Practice Areas
               </p>
             </div>
             <h2
-              className="font-serif font-light leading-[1.14] text-[#0A1520]"
+              className="font-serif font-light leading-[1.14] text-[#0A1520] dark:text-[#E2EBF3]"
               style={{ fontSize: "clamp(2.1rem, 4.5vw, 3.4rem)" }}
             >
               Comprehensive{" "}
-              <em className="italic text-[#1E3A5F]">Legal Coverage</em>
+              <em className="italic text-[#1E3A5F] dark:text-[#6A9CC8]">Legal Coverage</em>
             </h2>
           </div>
-          <p className="text-[#4A6070] font-light leading-[1.8] text-[0.97rem] md:pb-1">
+          <p className="text-[#4A6070] dark:text-[#8BA4B8] font-light leading-[1.8] text-[0.97rem] md:pb-1">
             LoyLegal PH handles a broad range of personal and business legal
             matters — integrated support delivered with clarity, efficiency, and
             genuine care.
@@ -121,28 +121,28 @@ export default function Services() {
 
         {/* Grid */}
         <div
-          className="grid gap-px bg-[#E2E8F0]"
+          className="grid gap-px bg-[#E2E8F0] dark:bg-white/10"
           style={{ gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))" }}
         >
           {services.map((s) => (
             <div
               key={s.title}
-              className="relative bg-white p-8 group hover:bg-[#F6F7F9] transition-colors duration-200 overflow-hidden"
+              className="relative bg-white dark:bg-[#162032] p-8 group hover:bg-[#F6F7F9] dark:hover:bg-white/5 transition-colors duration-200 overflow-hidden"
             >
               {/* Top accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#E2E8F0] group-hover:bg-[#1E3A5F] transition-colors duration-300" />
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#E2E8F0] dark:bg-white/10 group-hover:bg-[#1E3A5F] transition-colors duration-300" />
 
               {/* Icon block */}
-              <div className="w-16 h-16 border-2 border-[rgba(30,58,95,0.14)] bg-[#F6F7F9] flex items-center justify-center mb-6 mt-2 text-[#1E3A5F] group-hover:bg-[#1E3A5F] group-hover:border-[#1E3A5F] group-hover:text-white transition-all duration-300">
+              <div className="w-16 h-16 border-2 border-[rgba(30,58,95,0.14)] dark:border-white/10 bg-[#F6F7F9] dark:bg-white/5 flex items-center justify-center mb-6 mt-2 text-[#1E3A5F] dark:text-[#6A9CC8] group-hover:bg-[#1E3A5F] group-hover:border-[#1E3A5F] group-hover:text-white transition-all duration-300">
                 <span className="w-7 h-7 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
                   {s.icon}
                 </span>
               </div>
 
-              <h3 className="font-serif font-semibold text-[1.15rem] text-[#0A1520] mb-2.5 tracking-[0.01em]">
+              <h3 className="font-serif font-semibold text-[1.15rem] text-[#0A1520] dark:text-[#E2EBF3] mb-2.5 tracking-[0.01em]">
                 {s.title}
               </h3>
-              <p className="text-[0.86rem] font-light leading-[1.75] text-[#4A6070]">
+              <p className="text-[0.86rem] font-light leading-[1.75] text-[#4A6070] dark:text-[#8BA4B8]">
                 {s.desc}
               </p>
             </div>
